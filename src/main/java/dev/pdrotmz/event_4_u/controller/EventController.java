@@ -1,6 +1,6 @@
 package dev.pdrotmz.event_4_u.controller;
 
-import dev.pdrotmz.event_4_u.domain.Event;
+import dev.pdrotmz.event_4_u.domain.model.Event;
 import dev.pdrotmz.event_4_u.service.EventService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

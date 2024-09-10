@@ -1,7 +1,7 @@
 package dev.pdrotmz.event_4_u.service;
 
-import dev.pdrotmz.event_4_u.domain.Event;
-import dev.pdrotmz.event_4_u.domain.User;
+import dev.pdrotmz.event_4_u.domain.model.Event;
+import dev.pdrotmz.event_4_u.domain.model.User;
 import dev.pdrotmz.event_4_u.repository.EventRepository;
 import dev.pdrotmz.event_4_u.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -25,9 +25,9 @@ public class EventService {
     }
 
     public Event createEvent(Event event, String username) {
-        User owner = userRepository.findByUsername(username)
+        User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("user not Found"));
-        event.setOwner(owner);
+        event.setUser(user);
         return repository.save(event);
     }
 
