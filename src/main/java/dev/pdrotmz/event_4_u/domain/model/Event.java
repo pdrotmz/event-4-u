@@ -1,4 +1,4 @@
-package dev.pdrotmz.event_4_u.domain;
+package dev.pdrotmz.event_4_u.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
@@ -23,16 +23,16 @@ public class Event {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_name", nullable = false)
     @JsonBackReference
-    private User owner;
+    private User user;
 
     public Event() {
     }
 
-    public Event(UUID id, String eventTitle, String eventDescription, User owner) {
+    public Event(UUID id, String eventTitle, String eventDescription, User user) {
         this.id = id;
         this.eventTitle = eventTitle;
         this.eventDescription = eventDescription;
-        this.owner = owner;
+        this.user = user;
     }
 
     public UUID getId() {
@@ -59,11 +59,11 @@ public class Event {
         this.eventDescription = eventDescription;
     }
 
-    public User getOwner() {
-        return owner;
+    public User getUser() {
+        return user;
     }
 
-    public void setOwner(User owner) {
-        this.owner = owner;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
