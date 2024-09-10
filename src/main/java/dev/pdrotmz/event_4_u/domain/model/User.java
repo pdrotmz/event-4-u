@@ -1,11 +1,10 @@
-package dev.pdrotmz.event_4_u.domain;
+package dev.pdrotmz.event_4_u.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -23,7 +22,7 @@ public class User {
     @NotBlank
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "owner")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     @JsonManagedReference
     private List<Event> event;
 
@@ -77,4 +76,5 @@ public class User {
     public void setEvent(List<Event> event) {
         this.event = event;
     }
+
 }

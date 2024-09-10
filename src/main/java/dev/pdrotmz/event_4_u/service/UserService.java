@@ -1,6 +1,6 @@
 package dev.pdrotmz.event_4_u.service;
 
-import dev.pdrotmz.event_4_u.domain.User;
+import dev.pdrotmz.event_4_u.domain.model.User;
 import dev.pdrotmz.event_4_u.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;

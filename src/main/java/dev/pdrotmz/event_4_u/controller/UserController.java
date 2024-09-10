@@ -1,8 +1,7 @@
 package dev.pdrotmz.event_4_u.controller;
 
-import dev.pdrotmz.event_4_u.domain.User;
+import dev.pdrotmz.event_4_u.domain.model.User;
 import dev.pdrotmz.event_4_u.service.UserService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
